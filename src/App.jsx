@@ -1,5 +1,8 @@
+import { BrowserRouter } from "react-router-dom";
 import { SearchInput } from "../components/molecules/SearchInput";
 import { UserCard } from "../components/organisms/user/UserCard";
+import { DefaultLayout } from "../components/templates/DefaultLayout";
+import { HeaderOnly } from "../components/templates/HeaderOnly";
 import "./styles.css";
 
 export default function App() {
@@ -11,9 +14,11 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <SearchInput />
-      <UserCard user={user} />
-    </div>
+    <BrowserRouter>
+      <DefaultLayout>
+        <SearchInput />
+        <UserCard user={user} />
+      </DefaultLayout>
+    </BrowserRouter>
   );
 }
